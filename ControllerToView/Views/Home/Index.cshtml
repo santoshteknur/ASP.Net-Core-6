@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ControllerToView.Models.Employee>
+@* @{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Welcome to Home Page";
+    var viewDataEmployee = ViewData["emp"] as Employee; //need type casting
+} *@
+
+
+<div class="row">
+    @* @{
+    var students = ViewData["myStudents"] as List<StudentModel>;
+
+    } *@
+
+    @{
+        // var employee = ViewData["myEmp"] as Employee;
+        var employee = ViewBag.myEmp;
+    }
+</div>
+
+<table class="arrowes-table table-striped">
+    <tr>
+        @*  <th>Roll Number</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Standard</th> *@
+        @* <th>Emp ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Salary</th> *@
+
+
+    </tr>
+    @*  @foreach (var std in students)
+    {
+    <tr>
+    <td>@std.rollnumber</td>
+    <td>@std.Name</td>
+    <td>@std.Gender</td>
+    <td>@std.Standard</td>
+    </tr>
+    } *@
+
+    @*  <tr class="table">
+    <td>Employee ID : @employee.EmpID</td>
+    <td>Name : @employee.Name</td>
+    <td>Address : @employee.Address</td>
+    <td>Salary : @employee.Salary</td>
+    </tr> *@
+</table>
+
+@* <h4>@ViewBag.Employee.Name</h4>
+<h3>@viewDataEmployee.Name</h3> *@
+
+@{
+    foreach (var item in Model)
+ {
+     <h2>@item.EmpID</h2>
+    <h2>@item.Name</h2>
+    <h2>@item.Address</h2>
+    <h2>@item.Salary</h2>
+    <p>-----------</p>
+ }
+}
